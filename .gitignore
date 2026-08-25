@@ -1,5 +1,6 @@
 build/
 dist/
+
 *.o
 *.obj
 *.exe
@@ -17,3 +18,4 @@ firmware/
 keys/
 games/
 dumps/
+private/

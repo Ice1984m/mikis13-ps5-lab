@@ -2,12 +2,12 @@
 set -Eeuo pipefail
 
 echo
-echo "=== Bash ==="
+echo "=== BASH ==="
 
-for F in scripts/*.sh
+for FILE in scripts/*.sh
 do
-  bash -n "$F"
-  echo "✅ $F"
+  bash -n "$FILE"
+  echo "✅ $FILE"
 done
 
 echo
@@ -16,29 +16,24 @@ echo "=== JSON ==="
 jq empty config/lab.json
 jq empty compatibility/database.json
 
-echo "✅ JSON"
+echo "✅ JSON PASS"
 
 echo
-echo "=== CMake ==="
+echo "=== SECURITY ==="
 
-test -s CMakeLists.txt
-test -s src/main.cpp
-test -s src/elf_info.cpp
-test -s include/elf_info.hpp
-
-echo "✅ Sources"
+./scripts/security.sh
 
 echo
-echo "=== Build ==="
+echo "=== BUILD ==="
 
 ./scripts/build.sh
 
 echo
-echo "=== CTest ==="
+echo "=== CTEST ==="
 
 ctest \
   --test-dir build \
   --output-on-failure
 
 echo
-echo "✅ ALLE TESTS GESLAAGD"
+echo "✅ TEST SUITE PASS"

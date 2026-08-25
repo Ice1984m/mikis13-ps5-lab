@@ -7,16 +7,13 @@ for TRY in $(seq 1 "$MAX")
 do
 
   echo
-  echo "========================================"
+  echo "======================================"
   echo " PS5 LAB REPAIR $TRY/$MAX"
-  echo "========================================"
+  echo "======================================"
 
   chmod +x scripts/*.sh
 
-  mkdir -p \
-    reports \
-    compatibility \
-    build
+  rm -rf build
 
   if ./scripts/test.sh
   then
@@ -28,13 +25,11 @@ do
   echo
   echo "⚠️ Test faalde"
 
-  rm -rf build
-
   sleep 2
 
 done
 
 echo
-echo "❌ Repair faalde na $MAX rondes"
+echo "❌ Repair faalde na $MAX pogingen"
 
 exit 1

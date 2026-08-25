@@ -1,7 +1,7 @@
 #include "elf_info.hpp"
 
-#include <fstream>
 #include <array>
+#include <fstream>
 
 ElfInfo inspectElf(const std::string& path)
 {
@@ -14,7 +14,10 @@ ElfInfo inspectElf(const std::string& path)
 
     std::array<unsigned char, 20> h{};
 
-    f.read(reinterpret_cast<char*>(h.data()), h.size());
+    f.read(
+        reinterpret_cast<char*>(h.data()),
+        static_cast<std::streamsize>(h.size())
+    );
 
     if (f.gcount() < 20)
         return out;
@@ -28,12 +31,10 @@ ElfInfo inspectElf(const std::string& path)
         return out;
 
     out.valid = true;
+    out.is64 = h[4] == 2;
+    out.littleEndian = h[5] == 1;
 
-    out.is64 = (h[4] == 2);
-
-    out.littleEndian = (h[5] == 1);
-
-    unsigned machine =
+    const unsigned machine =
         static_cast<unsigned>(h[18]) |
         (static_cast<unsigned>(h[19]) << 8);
 

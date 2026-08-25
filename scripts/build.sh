@@ -9,10 +9,17 @@ cmake \
   -G Ninja \
   -DCMAKE_BUILD_TYPE=Release
 
-cmake \
-  --build build
+cmake --build build
 
 echo
-echo "✅ Build klaar"
+echo "=== INFO ==="
 
 ./build/mikis13-ps5 info
+
+echo
+echo "=== SELFTEST ==="
+
+./build/mikis13-ps5 selftest
+
+echo
+echo "✅ BUILD PASS"

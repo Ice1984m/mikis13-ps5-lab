@@ -1,22 +1,37 @@
 [
   {
-    "name": "ELF Inspector",
-    "type": "internal-test",
+    "name": "Core Selftest",
+    "type": "internal",
     "status": "working"
   },
   {
-    "name": "Homebrew Hello World",
-    "type": "homebrew",
-    "status": "loader-stage"
+    "name": "ELF Inspector",
+    "type": "loader",
+    "status": "working"
   },
   {
-    "name": "Vulkan Triangle",
-    "type": "homebrew",
+    "name": "Virtual Memory Prototype",
+    "type": "memory",
+    "status": "working"
+  },
+  {
+    "name": "Instruction Decoder Test ISA",
+    "type": "cpu",
+    "status": "working"
+  },
+  {
+    "name": "GPU Command Queue",
+    "type": "graphics",
+    "status": "working"
+  },
+  {
+    "name": "Vulkan Renderer",
+    "type": "graphics",
     "status": "planned"
   },
   {
-    "name": "Commercial PS5 software",
+    "name": "Commercial PS5 Software",
     "type": "retail",
-    "status": "not-supported-v2"
+    "status": "not-supported"
   }
 ]

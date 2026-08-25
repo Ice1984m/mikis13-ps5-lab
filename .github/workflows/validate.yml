@@ -1,4 +1,4 @@
-name: Validate PS5 Lab
+name: Validate PS5 Lab V3
 
 on:
   workflow_dispatch:
@@ -25,22 +25,14 @@ jobs:
       - name: Dependencies
         run: |
           sudo apt-get update
+
           sudo apt-get install -y \
             cmake \
             ninja-build \
             jq
 
-      - name: Build
+      - name: Tests
         run: |
           chmod +x scripts/*.sh
-          ./scripts/build.sh
 
-      - name: Test
-        run: |
-          ctest \
-            --test-dir build \
-            --output-on-failure
-
-      - name: Security
-        run: |
-          ./scripts/security.sh
+          ./scripts/test.sh
