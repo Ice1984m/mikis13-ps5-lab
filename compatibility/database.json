@@ -1,0 +1,22 @@
+[
+  {
+    "name": "ELF Inspector",
+    "type": "internal-test",
+    "status": "working"
+  },
+  {
+    "name": "Homebrew Hello World",
+    "type": "homebrew",
+    "status": "loader-stage"
+  },
+  {
+    "name": "Vulkan Triangle",
+    "type": "homebrew",
+    "status": "planned"
+  },
+  {
+    "name": "Commercial PS5 software",
+    "type": "retail",
+    "status": "not-supported-v2"
+  }
+]

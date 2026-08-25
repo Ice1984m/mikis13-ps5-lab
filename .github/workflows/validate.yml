@@ -1,0 +1,46 @@
+name: Validate PS5 Lab
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+
+  linux:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            cmake \
+            ninja-build \
+            jq
+
+      - name: Build
+        run: |
+          chmod +x scripts/*.sh
+          ./scripts/build.sh
+
+      - name: Test
+        run: |
+          ctest \
+            --test-dir build \
+            --output-on-failure
+
+      - name: Security
+        run: |
+          ./scripts/security.sh
