@@ -1,17 +1,3 @@
 #include "gpu.hpp"
-
-void GpuQueue::push(const GpuCommand& command)
-{
-    commands_.push_back(command);
-}
-
-std::size_t GpuQueue::size() const
-{
-    return commands_.size();
-}
-
-const std::vector<GpuCommand>&
-GpuQueue::commands() const
-{
-    return commands_;
-}
+void GpuQueue::push(std::string s){q_.push_back(std::move(s));}
+std::size_t GpuQueue::size()const{return q_.size();}

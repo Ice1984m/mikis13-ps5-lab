@@ -1,11 +1,7 @@
 #pragma once
-
-struct ControllerState
-{
-    bool cross = false;
-    bool circle = false;
-    float leftX = 0.0f;
-    float leftY = 0.0f;
+struct PadState {
+    bool cross=false;
+    float lx=0;
+    float ly=0;
 };
-
-ControllerState neutralController();
+PadState neutralPad();

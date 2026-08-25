@@ -1,16 +1,10 @@
 #pragma once
-
 #include <string>
 #include <vector>
-
-class Debugger
-{
+class Debugger {
 public:
-    void log(const std::string& message);
-
-    const std::vector<std::string>&
-    entries() const;
-
+    void log(const std::string&);
+    std::size_t count() const;
 private:
-    std::vector<std::string> entries_;
+    std::vector<std::string> logs_;
 };

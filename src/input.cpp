@@ -1,6 +1,2 @@
 #include "input.hpp"
-
-ControllerState neutralController()
-{
-    return {};
-}
+PadState neutralPad(){return {};}

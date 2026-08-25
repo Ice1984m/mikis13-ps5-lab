@@ -1,38 +1,22 @@
-name: Validate PS5 Lab V3
+name: Validate PS5 Lab V4
 
 on:
   workflow_dispatch:
-
   push:
-    branches:
-      - main
-
+    branches: [main]
   pull_request:
 
 permissions:
   contents: read
 
 jobs:
-
   linux:
-
     runs-on: ubuntu-latest
-
     steps:
-
       - uses: actions/checkout@v4
-
-      - name: Dependencies
-        run: |
+      - run: |
           sudo apt-get update
-
-          sudo apt-get install -y \
-            cmake \
-            ninja-build \
-            jq
-
-      - name: Tests
-        run: |
+          sudo apt-get install -y cmake ninja-build jq
+      - run: |
           chmod +x scripts/*.sh
-
           ./scripts/test.sh

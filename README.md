@@ -1,42 +1,27 @@
-# Mikis13 PS5 Emulator Research Lab V3
+# Mikis13 PS5 Emulator Research Lab V4
 
-Experimentele emulator-architectuur voor pc.
+Werkende emulator research-core:
 
-## V3 werkend
-
-- C++20 emulator shell
-- ELF inspector
+- ELF inspection
 - virtual memory prototype
-- test instruction decoder
+- test CPU interpreter
+- thread scheduler
 - syscall abstraction
 - GPU command queue
-- shader translation abstraction
+- audio abstraction
 - controller abstraction
-- debugger/logging
-- compatibility database
+- debugger
+- automated tests
 - repair bot
 - Linux/Windows CI
 
-## Nog niet geïmplementeerd
+## Belangrijk
 
-- echte PS5 CPU execution
-- echte PS5 kernel/syscalls
-- echte GPU command translation
-- volledige Vulkan renderer
-- shader recompiler
-- commerciële game compatibility
-
-## Legaal gebruik
-
-Alleen:
-
-- homebrew
-- zelfgemaakte testsoftware
-- eigen legaal verkregen dumps
+Dit is nog geen commerciële PS5-game-emulator.
 
 Niet inbegrepen:
 
-- Sony firmware
-- console keys
+- firmware
+- Sony keys
 - DRM bypass
-- commerciële game downloads
+- game downloads

@@ -1,14 +1,3 @@
 #include "debugger.hpp"
-
-void Debugger::log(
-    const std::string& message
-)
-{
-    entries_.push_back(message);
-}
-
-const std::vector<std::string>&
-Debugger::entries() const
-{
-    return entries_;
-}
+void Debugger::log(const std::string&s){logs_.push_back(s);}
+std::size_t Debugger::count()const{return logs_.size();}

@@ -1,26 +1,16 @@
 {
-  "name": "Mikis13 PS5 Emulator Research Lab V3",
-  "mode": "legal-research",
+  "name": "Mikis13 PS5 Emulator Research Lab V4",
+  "mode": "legal-homebrew-research",
+  "retail_ps5_games_supported": false,
   "supported_inputs": [
     "homebrew ELF",
     "self-built test ELF",
-    "legally dumped personal experimental content"
+    "own legal dumps"
   ],
-  "prohibited_distribution": [
+  "forbidden_distribution": [
     "Sony firmware",
     "console keys",
-    "DRM bypass tools",
-    "pirated commercial games"
-  ],
-  "subsystems": [
-    "ELF loader",
-    "virtual memory",
-    "instruction decoder",
-    "syscall abstraction",
-    "graphics command abstraction",
-    "shader pipeline abstraction",
-    "controller input abstraction",
-    "debugger",
-    "compatibility database"
+    "DRM bypass",
+    "pirated games"
   ]
 }

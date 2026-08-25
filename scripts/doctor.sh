@@ -3,40 +3,28 @@ set -Eeuo pipefail
 
 FAIL=0
 
-echo
-echo "=== SOURCES ==="
-
-for FILE in \
+for f in \
   CMakeLists.txt \
   src/main.cpp \
-  src/virtual_memory.cpp \
-  src/decoder.cpp \
-  src/syscall.cpp \
+  src/elf.cpp \
+  src/memory.cpp \
+  src/cpu.cpp \
+  src/scheduler.cpp \
+  src/syscalls.cpp \
   src/gpu.cpp \
-  src/shader.cpp \
+  src/audio.cpp \
   src/input.cpp \
   src/debugger.cpp
 do
-
-  if [ -s "$FILE" ]
-  then
-    echo "✅ $FILE"
+  if [ -s "$f" ]; then
+    echo "✅ $f"
   else
-    echo "❌ $FILE"
+    echo "❌ $f"
     FAIL=1
   fi
-
 done
 
-echo
-echo "=== JSON ==="
-
 jq empty config/lab.json || FAIL=1
-jq empty compatibility/database.json || FAIL=1
-
-echo
-echo "=== SECURITY ==="
-
 ./scripts/security.sh || FAIL=1
 
 exit "$FAIL"
