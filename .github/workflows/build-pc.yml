@@ -21,7 +21,7 @@ jobs:
           mkdir dist
           cp build/mikis13-ps5 README.md dist/
           zip -r mikis13-ps5-linux-x86_64.zip dist
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: linux
           path: mikis13-ps5-linux-x86_64.zip
@@ -38,7 +38,7 @@ jobs:
           Copy-Item build/Release/mikis13-ps5.exe dist/
           Copy-Item README.md dist/
           Compress-Archive -Path dist/* -DestinationPath mikis13-ps5-windows-x64.zip
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: windows
           path: mikis13-ps5-windows-x64.zip
